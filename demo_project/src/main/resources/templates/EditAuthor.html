@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Author</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Author</h1>
+
+    <form th:action="@{/api/authors/update/{id}(id=${author.id})}" th:object="${author}" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" th:field="*{name}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" th:field="*{country}" required>
+        </div>
+
+        <button type="submit" class="btn">Update Author</button>
+        <a href="/api/authors" class="cancel">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

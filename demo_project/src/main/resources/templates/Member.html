@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Members</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Members</h1>
+
+    <div style="margin-bottom: 20px;">
+        <a href="/api/books" class="btn">Books</a>
+        <a href="/api/authors" class="btn">Authors</a>
+    </div>
+
+    <a href="/api/members/new" class="btn">+ Add New Member</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="member : ${members}">
+            <td th:text="${member.id}">1</td>
+            <td th:text="${member.name}">Member Name</td>
+            <td th:text="${member.email}">member@example.com</td>
+            <td th:text="${member.phoneNumber}">1234567890</td>
+            <td>
+                <a class="edit" th:href="@{/api/members/edit/{id}(id=${member.id})}">Edit</a>
+                <a class="delete" th:href="@{/api/members/delete/{id}(id=${member.id})}" onclick="return confirm('Are you sure you want to delete this member?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p th:if="${#lists.isEmpty(members)}">No members available.</p>
+</div>
+</body>
+</html>

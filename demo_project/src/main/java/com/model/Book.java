@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Book {
@@ -11,22 +15,26 @@ public class Book {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private Long id;
-
+    @NotBlank(message = "Title cannot be blank")
     private String title;
-    private String author;
-    private int price;
+    @ManyToOne 
+    @JoinColumn(name = "author_id")
+    private Author author;
+    @NotNull(message = "Price cannot be null")
+    private Double price;
 
     // Default Constructor
     public Book() {
         this.title = "";
-        this.author = "";
-        this.price = 0;
+        this.author = null;
+        this.price = 0.0;
 
     }
 
     // Parameterized Constructor
-    public Book(String title, String author, int price) {
+    public Book(String title, Author author, Double price) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -48,20 +56,20 @@ public class Book {
     }
 
     // Author Methods
-    public String getAuthor() {
+    public Author getAuthor() {
         return this.author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
     // Price Methods
-    public int getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         // Benefit of setters: You can protect your data!
         if (price >= 0) {
             this.price = price;
@@ -69,4 +77,5 @@ public class Book {
             System.out.println("Price cannot be negative!");
         }
     }
+
 }

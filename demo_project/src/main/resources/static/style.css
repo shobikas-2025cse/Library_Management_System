@@ -1,0 +1,216 @@
+/* =========================
+   General Page
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+
+/* =========================
+   Main Container
+   ========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+
+/* =========================
+   Headings
+   ========================= */
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   Buttons
+   ========================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+
+/* =========================
+   Forms
+   ========================= */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+
+/* =========================
+   Error Messages
+   ========================= */
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+
+/* =========================
+   Cancel Button
+   ========================= */
+
+.cancel {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-left: 10px;
+    background-color: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.cancel:hover {
+    background-color: #7f8c8d;
+}
+
+
+/* =========================
+   Books Table
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+
+td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tbody tr:hover {
+    background-color: #f1f7fb;
+}
+
+
+/* =========================
+   Edit Button
+   ========================= */
+
+.edit {
+    display: inline-block;
+    padding: 7px 12px;
+    margin-right: 6px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.edit:hover {
+    background-color: #d68910;
+}
+
+
+/* =========================
+   Delete Button
+   ========================= */
+
+.delete {
+    display: inline-block;
+    padding: 7px 12px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+
+/* =========================
+   Normal Paragraph
+   ========================= */
+
+p {
+    margin-top: 20px;
+    color: #777;
+    font-size: 16px;
+}
